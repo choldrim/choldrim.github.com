@@ -1,0 +1,229 @@
+/*
+	AnythingSlider v1.8+ Default theme
+	By Chris Coyier: http://css-tricks.com
+	with major improvements by Doug Neiner: http://pixelgraphics.us/
+	based on work by Remy Sharp: http://jqueryfordesigners.com/
+*/
+
+/*****************************
+  SET DEFAULT DIMENSIONS HERE
+ *****************************/
+/* change the ID & dimensions to match your slider */
+div.anythingWindow{
+	position: relative;
+	width: 1000px;
+	height: 429px;
+}
+
+ul#slider {
+	width: 1000px;
+	height: 429px;
+	list-style: none;
+	/* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/******************
+  SET STYLING HERE
+ ******************
+ =================================
+ Default state (no keyboard focus)
+ ==================================*/
+/* Navigation buttons + start/stop button, default state */
+div.anythingControls{
+	position: absolute;
+	top: -50px;
+	right: 0px;
+}
+
+div.anythingControls ul li{
+	list-style: none;
+	float: left;
+	margin-left: 2px;
+}
+
+
+
+/* Make sure navigation text is visible */
+.anythingSlider-default .anythingControls a span {
+	visibility: visible;
+}
+/* Navigation current button, default state */
+.anythingSlider-default .anythingControls a.cur {
+	background: #888;
+	color: #000;
+}
+
+/* start-stop button, stopped, default state */
+.anythingSlider-default .anythingControls a.start-stop {
+	background-color: #040;
+	color: #ddd;
+}
+/* start-stop button, playing, default state */
+.anythingSlider-default .anythingControls a.start-stop.playing {
+	background-color: #800;
+}
+
+/* start-stop button, default hovered text color (when visible) */
+/* hide nav/start-stop background image shadow on hover - makes the button appear to come forward */
+.anythingSlider-default .anythingControls a.start-stop:hover,
+.anythingSlider-default .anythingControls a.start-stop.hover,
+.anythingSlider-default .anythingControls a.start-stop .anythingControls ul a:hover {
+	background-image: none;
+	color: #ddd;
+}
+
+/*
+ =================================
+ Active State (has keyboard focus)
+ =================================
+*/
+
+/* Navigation buttons, active state */
+.anythingSlider-default.activeSlider .anythingControls a {
+	/* background image = top shadow */
+	display: block;
+	width: 18px;
+	height: 12px;	
+	background: #ee4e1d;
+	text-indent: -9999px;
+}
+/* Navigation current & hovered button, active state */
+.anythingSlider-default.activeSlider .anythingControls a.cur,
+.anythingSlider-default.activeSlider .anythingControls a:hover {
+	/* background image removed */
+	background: #0072bc;
+}
+
+/* start-stop button, stopped, active state */
+.anythingSlider-default.activeSlider .anythingControls a.start-stop {
+	background-color: #080;
+	color: #fff;
+}
+/* start-stop button, playing, active state */
+.anythingSlider-default.activeSlider .anythingControls a.start-stop.playing {
+	background-color: #d00;
+	color: #fff;
+}
+/* start-stop button, active slider hovered text color (when visible) */
+.anythingSlider-default.activeSlider .start-stop:hover,
+.anythingSlider-default.activeSlider .start-stop.hover {
+	color: #fff;
+}
+
+/************************
+  NAVIGATION POSITIONING
+ ************************/
+/* Navigation Arrows */
+.anythingSlider-default .arrow {
+	top: 50%;
+	position: absolute;
+	display: block;
+}
+
+.anythingSlider-default .arrow a {
+	display: block;
+	width: 45px;
+	height: 56px;
+	text-align: center;
+	outline: 0;
+	background: url(../images/arrows.png) no-repeat;
+}
+
+/* back arrow */
+.anythingSlider-default .back { left: -100px; }
+.anythingSlider-default .back a { background-position: left top; }
+.anythingSlider-default .back a:hover { background-position: left bottom; }
+/* forward arrow */
+.anythingSlider-default .forward { right: -100px; }
+.anythingSlider-default .forward a { background-position: right top; }
+.anythingSlider-default .forward a:hover { background-position: right bottom; }
+
+/***********************
+  COMMON SLIDER STYLING
+ ***********************/
+/* Overall Wrapper */
+.anythingSlider {
+	display: block;
+	overflow: visible !important;
+	position: relative;
+}
+/* anythingSlider viewport window */
+.anythingSlider .anythingWindow {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+/* anythingSlider base (original element) */
+.anythingSlider .anythingBase {
+	background: transparent;
+	list-style: none;
+	position: absolute;
+	overflow: visible !important;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* Navigation arrow text; indent moved to span inside "a", for IE7;
+  apparently, a negative text-indent on an "a" link moves the link as well as the text */
+.anythingSlider .arrow span {
+	display: block;
+	visibility: hidden;
+}
+/* disabled arrows, hide or reduce opacity: opacity: .5; filter: alpha(opacity=50); */
+.anythingSlider .arrow.disabled {
+	display: none;
+}
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
+	background: transparent;
+	display: block;
+	overflow: hidden;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+/* fade mode */
+.anythingSlider .fade .panel {
+	float: none;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	z-index:2;
+}
+
+/***********************
+  RTL STYLING
+ ***********************/
+/* slider autoplay right-to-left, reverse order of nav links to look better */
+.anythingSlider.rtl .anythingWindow {
+	direction: ltr;
+	unicode-bidi: bidi-override;
+}
+.anythingSlider.rtl .anythingControls ul { float: left; } /* move nav link group to left */
+.anythingSlider.rtl .anythingControls ul a { float: right; } /* reverse order of nav links */
+.anythingSlider.rtl .start-stop { /* float: right; */ } /* move start/stop button - in case you want to switch sides */
+
+/* probably not necessary, but added just in case */
+.anythingSlider,
+.anythingSlider .anythingWindow,
+.anythingSlider .anythingControls ul a,
+.anythingSlider .arrow a,
+.anythingSlider .start-stop {
+	transition-duration: 0;
+	-o-transition-duration: 0;
+	-moz-transition-duration: 0;
+	-webkit-transition-duration: 0;
+}
