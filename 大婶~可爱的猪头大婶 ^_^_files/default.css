@@ -1,0 +1,60 @@
+body {
+	background: rgb(255, 255, 238); margin: 0px; padding: 0px; overflow: auto; font-size: 12px;
+}
+#mainDiv {
+	width: 100%; height: 100%;
+}
+#loveHeart {
+	width: 670px; height: 625px; float: left;
+}
+#garden {
+	width: 100%; height: 100%;
+}
+#elapseClock {
+	text-align: right; font-size: 18px; margin-top: 10px; margin-bottom: 10px;
+}
+#words {
+	width: 500px; color: rgb(102, 102, 102); font-family: "sans-serif"; font-size: 24px;
+}
+#messages {
+	display: none;
+}
+#elapseClock .digit {
+	font-family: "digit"; font-size: 36px;
+}
+#loveu {
+	padding: 5px; text-align: right; font-size: 22px; margin-top: 80px; margin-right: 120px; display: none;
+}
+#loveu .signature {
+	font-size: 20px; font-style: italic; margin-top: 10px;
+}
+#clickSound {
+	display: none;
+}
+#code {
+	width: 440px; height: 620px; color: rgb(51, 51, 51); font-family: "Consolas","Monaco","Bitstream Vera Sans Mono","Courier New","sans-serif"; font-size: 12px; float: left;
+}
+#code .string {
+	color: rgb(42, 54, 255);
+}
+#code .keyword {
+	color: rgb(127, 0, 85); font-weight: bold;
+}
+#code .placeholder {
+	margin-left: 15px;
+}
+#code .space {
+	margin-left: 7px;
+}
+#code .comments {
+	color: rgb(63, 127, 95);
+}
+#copyright {
+	width: 100%; text-align: center; color: rgb(102, 102, 102); margin-top: 10px;
+}
+#errorMsg {
+	left: 0px; top: 100px; width: 100%; text-align: center; font-size: 24px; position: absolute;
+}
+#copyright a {
+	color: rgb(102, 102, 102);
+}
