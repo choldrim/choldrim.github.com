@@ -32,9 +32,10 @@ body {
 #loveu .signature {
 	font-size: 20px; font-style: italic; margin-top: 10px;
 }
-#loveu .qrcode {
-    height: 80px;
-    width: 80px;
+#loveu .qrcode img{
+    height: 100px;
+    width: 100px;
+    margin-right: 60px;
 }
 #clickSound {
 	display: none;
