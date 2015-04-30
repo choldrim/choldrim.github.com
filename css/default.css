@@ -1,3 +1,7 @@
+@font-face {
+    font-family: digit;
+    src: url('../source/digital-7_mono.ttf') format("truetype");
+}
 body {
 	background: rgb(255, 255, 238); margin: 0px; padding: 0px; overflow: auto; font-size: 12px;
 }
@@ -23,10 +27,14 @@ body {
 	font-family: "digit"; font-size: 36px;
 }
 #loveu {
-	padding: 5px; text-align: right; font-size: 22px; margin-top: 80px; margin-right: 120px; display: none;
+	padding: 5px; text-align: right; font-size: 22px; margin-top: 40px; margin-right: 120px; display: none;
 }
 #loveu .signature {
 	font-size: 20px; font-style: italic; margin-top: 10px;
+}
+#loveu .qrcode {
+    height: 80px;
+    width: 80px;
 }
 #clickSound {
 	display: none;
