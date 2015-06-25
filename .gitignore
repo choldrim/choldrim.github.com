@@ -2,6 +2,8 @@
 ## Eclipse
 #################
 
+nohup.out
+
 *.pydevproject
 .project
 .metadata
